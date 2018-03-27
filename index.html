@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TypeVis</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+	<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+		      <a class="navbar-brand" href="index.html">TypeVis</a>
+	    </div>
+	  </div>
+	</nav>
+
+	<div id="description" class="container-fluid">
+
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 text-center">
+				<div id="description-text-area">
+					<p>
+						Az alábbi kérdőívben a TypeVis, egy gépelést vizualizáló eszköz által alkotott ábrázolások szerepelnek. Több ember begépelte ugyanazt a szöveget, de a gépelés módja minden személynél más és más volt. A TypeVis az egyes billenyűleütések között eltelt időkülönbségek alapján tesz különbséget. A látható képeken az információk eképpen kerülnek kódolásra:
+						<ul>
+							<li>
+								A TypeVis betűpárok sorozataként egy táblázatban létrehoz egy ábrázolásmódot, a táblázat bal oldalán a betűpárok első betűje, felső részben a második betű található.
+							</li>
+							<li>
+								A betűpárok leütése között eltelt idő színek használatával, az alábbiak szerint kerül megmutatásra:<br />
+								Kevés eltelt idő <img src="img/color-scale.png" /> Sok eltelt idő
+							</li>
+							<li>
+								Előfordulhat, hogy a soron következő betűpárt úgy ütötte le a felhasználó, hogy még az előzőt nem engedte fel. Ez esetben a szín köré sötét keret került, minél sötétebb, annál többször történt ilyen.
+							</li>
+							<li>
+								Hogy milyen szórás jellemző az egyes betűpárok lenyomása között eltelt időkre, a négyzet nagysága jelzi. Minél kisebb az, annál nagyobb szórás jellemző a személynél az átlagosan eltelt időkre.
+							</li>
+							<li>
+								Az elütött és javított karakterek mennyiségét a táblázat jobb illetve alsó részén lévő vonalak jelzik. A piros vonalak mutatják, hányszor ütötte el az adott karaktert, míg a kék vonalak azt, hogy hányszor javított át arra a karakterre.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4 text-center">
+				<div id="startSurveyWrap">
+					<a id="startSurvey" href="typevisform"><span>Start</span><br /><span class="glyphicon glyphicon-chevron-down"></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+	<div id="blueimp-gallery" class="blueimp-gallery">
+	    <!-- The container for the modal slides -->
+	    <div class="slides"></div>
+	    <!-- Controls for the borderless lightbox -->
+	    <h3 class="title"></h3>
+	    <a class="prev">‹</a>
+	    <a class="next">›</a>
+	    <a class="close">×</a>
+	    <a class="play-pause"></a>
+	    <ol class="indicator"></ol>
+	    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+	    <div class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <button type="button" class="close" aria-hidden="true">&times;</button>
+	                    <h4 class="modal-title"></h4>
+	                </div>
+	                <div class="modal-body next"></div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-default pull-left prev">
+	                        <i class="glyphicon glyphicon-chevron-left"></i>
+	                        Előző
+	                    </button>
+	                    <button type="button" class="btn btn-primary next">
+	                        Következő
+	                        <i class="glyphicon glyphicon-chevron-right"></i>
+	                    </button>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<form id="typevisform">
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>1. Válaszd ki melyik a párja az alábbi képnek!</h3>
+					<br />
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<div class="thumbnail thumbnail-question">
+									<a href="img/pics/ez_shalf.png" title="1.Kérdés" data-gallery="gallery-01">
+										<img src="img/pics/ez_shalf.png" alt="kerdes_01" class="img-responsive"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A01" value="1"/>
+						<br />
+						<a href="img/pics/bv_shalf.png" title="1" data-gallery="gallery-01">
+							<img src="img/pics/bv_shalf.png" alt="1" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A01" value="2"/>
+						<br />
+						<a href="img/pics/bv_fhalf.png" title="2" data-gallery="gallery-01">
+							<img src="img/pics/bv_fhalf.png" alt="2" class="img-responsive" />
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A01" value="3"/>
+						<br />
+						<a href="img/pics/en_fhalf.png" title="3" data-gallery="gallery-01">
+							<img src="img/pics/en_fhalf.png" alt="3" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="text-center thumbnail">
+						<input type="radio" name="A01" value="4"/>
+						<br />
+						<a href="img/pics/ez_fhalf.png" title="4" data-gallery="gallery-01">
+							<img src="img/pics/ez_fhalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>2. Válaszd ki melyik a párja az alábbi képnek!</h3>
+					<br />
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<div class="thumbnail thumbnail-question">
+									<a href="img/pics/en_shalf.png" title="2.Kérdés" data-gallery="gallery-02">
+										<img src="img/pics/en_shalf.png" alt="kerdes_02" class="img-responsive"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A02" value="1"/>
+						<br />
+						<a href="img/pics/kk_shalf.png" title="1" data-gallery="gallery-02">
+							<img src="img/pics/kk_shalf.png" alt="1" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A02" value="2"/>
+						<br />
+						<a href="img/pics/en_fhalf.png" title="2" data-gallery="gallery-02">
+							<img src="img/pics/en_fhalf.png" alt="2" class="img-responsive" />
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A02" value="3"/>
+						<br />
+						<a href="img/pics/kr_fhalf.png" title="3" data-gallery="gallery-02">
+							<img src="img/pics/kr_fhalf.png" alt="3" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="text-center thumbnail">
+						<input type="radio" name="A02" value="4"/>
+						<br />
+						<a href="img/pics/ek_fhalf.png" title="4" data-gallery="gallery-02">
+							<img src="img/pics/ek_fhalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>3. Válaszd ki melyik a párja az alábbi képnek!</h3>
+					<br />
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<div class="thumbnail thumbnail-question">
+									<a href="img/pics/bv_fhalf.png" title="3.Kérdés" data-gallery="gallery-03">
+										<img src="img/pics/bv_fhalf.png" alt="kerdes_03" class="img-responsive"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A03" value="1"/>
+						<br />
+						<a href="img/pics/bv_shalf.png" title="1" data-gallery="gallery-03">
+							<img src="img/pics/bv_shalf.png" alt="1" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A03" value="2"/>
+						<br />
+						<a href="img/pics/ez_shalf.png" title="2" data-gallery="gallery-03">
+							<img src="img/pics/ez_shalf.png" alt="2" class="img-responsive" />
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A03" value="3"/>
+						<br />
+						<a href="img/pics/en_fhalf.png" title="3" data-gallery="gallery-03">
+							<img src="img/pics/en_fhalf.png" alt="3" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="text-center thumbnail">
+						<input type="radio" name="A03" value="4"/>
+						<br />
+						<a href="img/pics/ez_fhalf.png" title="4" data-gallery="gallery-03">
+							<img src="img/pics/ez_fhalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>4. Válaszd ki melyik a párja az alábbi képnek!</h3>
+					<br />
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<div class="thumbnail thumbnail-question">
+									<a href="img/pics/kr_fhalf.png" title="4.Kérdés" data-gallery="gallery-04">
+										<img src="img/pics/kr_fhalf.png" alt="kerdes_04" class="img-responsive"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A04" value="1"/>
+						<br />
+						<a href="img/pics/kr_shalf.png" title="1" data-gallery="gallery-04">
+							<img src="img/pics/kr_shalf.png" alt="1" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A04" value="2"/>
+						<br />
+						<a href="img/pics/ek_shalf.png" title="2" data-gallery="gallery-04">
+							<img src="img/pics/ek_shalf.png" alt="2" class="img-responsive" />
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A04" value="3"/>
+						<br />
+						<a href="img/pics/ek_fhalf.png" title="3" data-gallery="gallery-04">
+							<img src="img/pics/ek_fhalf.png" alt="3" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="text-center thumbnail">
+						<input type="radio" name="A04" value="4"/>
+						<br />
+						<a href="img/pics/kk_fhalf.png" title="4" data-gallery="gallery-04">
+							<img src="img/pics/kk_fhalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>5. Válaszd ki melyik a párja az alábbi képnek!</h3>
+					<br />
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<div class="thumbnail thumbnail-question">
+									<a href="img/pics/ek_shalf.png" title="5.Kérdés" data-gallery="gallery-05">
+										<img src="img/pics/ek_shalf.png" alt="kerdes_05" class="img-responsive"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A05" value="1"/>
+						<br />
+						<a href="img/pics/kr_fhalf.png" title="1" data-gallery="gallery-05">
+							<img src="img/pics/kr_fhalf.png" alt="1" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A05" value="2"/>
+						<br />
+						<a href="img/pics/ek_fhalf.png" title="2" data-gallery="gallery-05">
+							<img src="img/pics/ek_fhalf.png" alt="2" class="img-responsive" />
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<input type="radio" name="A05" value="3"/>
+						<br />
+						<a href="img/pics/kk_fhalf.png" title="3" data-gallery="gallery-05">
+							<img src="img/pics/kk_fhalf.png" alt="3" class="img-responsive"/>
+				    </a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="text-center thumbnail">
+						<input type="radio" name="A05" value="4"/>
+						<br />
+						<a href="img/pics/en_fhalf.png" title="4" data-gallery="gallery-05">
+							<img src="img/pics/en_fhalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>6. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/en_fhalf.png" title="1" data-gallery="gallery-06">
+							<img src="img/pics/en_fhalf.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/kr_fhalf.png" title="2" data-gallery="gallery-06">
+							<img src="img/pics/kr_fhalf.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/kr_shalf.png" title="3" data-gallery="gallery-06">
+							<img src="img/pics/kr_shalf.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/en_shalf.png" title="4" data-gallery="gallery-06">
+							<img src="img/pics/en_shalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A06_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A06_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A06_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A06_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>7. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/en_fhalf.png" title="1" data-gallery="gallery-07">
+							<img src="img/pics/en_fhalf.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/bv_shalf.png" title="2" data-gallery="gallery-07">
+							<img src="img/pics/bv_shalf.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/en_shalf.png" title="3" data-gallery="gallery-07">
+							<img src="img/pics/en_shalf.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/bv_fhalf.png" title="4" data-gallery="gallery-07">
+							<img src="img/pics/bv_fhalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A07_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A07_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A07_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A07_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>8. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/kk_fhalf.png" title="1" data-gallery="gallery-08">
+							<img src="img/pics/kk_fhalf.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/kk_shalf.png" title="2" data-gallery="gallery-08">
+							<img src="img/pics/kk_shalf.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/ek_shalf.png" title="3" data-gallery="gallery-08">
+							<img src="img/pics/ek_shalf.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/ek_fhalf.png" title="4" data-gallery="gallery-08">
+							<img src="img/pics/ek_fhalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A08_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A08_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A08_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A08_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>9. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/ez_fhalf.png" title="1" data-gallery="gallery-09">
+							<img src="img/pics/ez_fhalf.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/ez_shalf.png" title="2" data-gallery="gallery-09">
+							<img src="img/pics/ez_shalf.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/bv_shalf.png" title="3" data-gallery="gallery-09">
+							<img src="img/pics/bv_shalf.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/bv_fhalf.png" title="4" data-gallery="gallery-09">
+							<img src="img/pics/bv_fhalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A09_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A09_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A09_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A09_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>10. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/kk_fhalf.png" title="1" data-gallery="gallery-10">
+							<img src="img/pics/kk_fhalf.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/kr_shalf.png" title="2" data-gallery="gallery-10">
+							<img src="img/pics/kr_shalf.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/kr_fhalf.png" title="3" data-gallery="gallery-10">
+							<img src="img/pics/kr_fhalf.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/kk_shalf.png" title="4" data-gallery="gallery-10">
+							<img src="img/pics/kk_shalf.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A10_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A10_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A10_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A10_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>11. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/kk_fhalf_high.png" title="1" data-gallery="gallery-11">
+							<img src="img/pics/kk_fhalf_high.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/kr_shalf_high.png" title="2" data-gallery="gallery-11">
+							<img src="img/pics/kr_shalf_high.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/kr_fhalf_high.png" title="3" data-gallery="gallery-11">
+							<img src="img/pics/kr_fhalf_high.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/kk_shalf_high.png" title="4" data-gallery="gallery-11">
+							<img src="img/pics/kk_shalf_high.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A11_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A11_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A11_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A11_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>12. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/ez_fhalf_low.png" title="1" data-gallery="gallery-12">
+							<img src="img/pics/ez_fhalf_low.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/ez_shalf_low.png" title="2" data-gallery="gallery-12">
+							<img src="img/pics/ez_shalf_low.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/bv_fhalf_low.png" title="3" data-gallery="gallery-12">
+							<img src="img/pics/bv_fhalf_low.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/bv_shalf_low.png" title="4" data-gallery="gallery-12">
+							<img src="img/pics/bv_shalf_low.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A12_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A12_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A12_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A12_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>13. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/en_fhalf_high.png" title="1" data-gallery="gallery-13">
+							<img src="img/pics/en_fhalf_high.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/en_shalf_high.png" title="2" data-gallery="gallery-13">
+							<img src="img/pics/en_shalf_high.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/kr_fhalf_high.png" title="3" data-gallery="gallery-13">
+							<img src="img/pics/kr_fhalf_high.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/kr_shalf_high.png" title="4" data-gallery="gallery-13">
+							<img src="img/pics/kr_shalf_high.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A13_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A13_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A13_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A13_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>14. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/kk_fhalf_high.png" title="1" data-gallery="gallery-14">
+							<img src="img/pics/kk_fhalf_high.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/ek_fhalf_high.png" title="2" data-gallery="gallery-14">
+							<img src="img/pics/ek_fhalf_high.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/ek_shalf_high.png" title="3" data-gallery="gallery-14">
+							<img src="img/pics/ek_shalf_high.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/kk_shalf_high.png" title="4" data-gallery="gallery-14">
+							<img src="img/pics/kk_shalf_high.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A14_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A14_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A14_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A14_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>15. Párosítsd össze az alábbi képeket!</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">1</p>
+						<a href="img/pics/e_fhalf_high.png" title="1" data-gallery="gallery-15">
+							<img src="img/pics/e_fhalf_high.png" alt="1" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">2</p>
+						<a href="img/pics/kr_fhalf_high.png" title="2" data-gallery="gallery-15">
+							<img src="img/pics/kr_fhalf_high.png" alt="2" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">3</p>
+						<a href="img/pics/e_shalf_high.png" title="3" data-gallery="gallery-15">
+							<img src="img/pics/e_shalf_high.png" alt="3" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div class="thumbnail">
+						<p class="thumbnail-title">4</p>
+						<a href="img/pics/kr_shalf_high.png" title="4" data-gallery="gallery-15">
+							<img src="img/pics/kr_shalf_high.png" alt="4" class="img-responsive"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Első pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A15_pair1" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A15_pair1" class="pair-input" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-right">
+					<label class="pair-input-label">Második pár:</label>
+				</div>
+				<div class="col-md-6 text-left">
+					<input type="text" name="A15_pair2" class="pair-input" />
+					<span> és </span>
+					<input type="text" name="A15_pair2" class="pair-input" />
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h3>
+						Válaszaid:
+					</h3>
+					<textarea readonly id="allAnswers" rows="25"></textarea>
+				</div>
+			</div>
+
+		</div>
+	</form>
+
+	<br />
+
+	<h2 class="text-center">Köszönjük kitöltésed!</h2>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12" id="footer">
+				<h3>TypeVis</h3>
+			</div>
+		</div>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+	<script src="js/bootstrap-image-gallery.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
