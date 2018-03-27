@@ -1,0 +1,74 @@
+html, body{
+	background-color: #fffffe;
+}
+
+#description{
+	background-image: url("../img/grey-keyboard-photo-pexels6.jpeg");
+	background-size: cover;
+}
+
+#description-text-area{
+	font-size: 16px;
+	background-color: rgba(255, 255, 255, .8);
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#allAnswers{
+	width: 50%;
+}
+
+.selected-img{
+	background-color: #aaaaf7 !important;
+}
+
+.thumbnail{
+	padding: 6px 6px 20px 6px;
+	margin-bottom: 20px;
+}
+
+.thumbnail-question{
+	padding: 6px !important;
+}
+
+.thumbnail-title{
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.pair-input{
+	font-size: 20px;
+	width: 60px;
+}
+
+.pair-input-label{
+	font-size: 18px;
+	font-weight: 400;
+	margin-top: 8px;
+}
+
+hr{
+	border-top-color: #aaaaf7;
+	border-top-width: 4px;
+	border-top-style: solid;
+}
+
+.navbar{
+	margin-bottom: 0px !important;
+}
+
+#startSurvey{
+	color: black;
+	font-size: 40px;
+}
+
+#startSurveyWrap{
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 12px;
+	padding: 20px;
+}
+
+#footer{
+	background-color: #222;
+	color: #9d9d9d;
+}
