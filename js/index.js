@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
-	$('#description').css('height', $(window).height() - 50);
+	$('#description').css('min-height', $(window).height() - 50);
 
 	$(window).on('resize', function(){
-		$('#description').css('height', $(window).height() - 50);
+		$('#description').css('min-height', $(window).height() - 50);
 	});
 
 	$('#startSurvey').on('click', function(e){
